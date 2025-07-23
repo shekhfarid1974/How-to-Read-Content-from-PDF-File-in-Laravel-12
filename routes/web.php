@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PDFController;
+
+Route::get('/upload-pdf', [PDFController::class, 'index'])->name('upload.pdf');
+Route::post('/read-pdf', [PDFController::class, 'readPDF'])->name('read.pdf');
 
 Route::get('/', function () {
     return Inertia::render('welcome');
